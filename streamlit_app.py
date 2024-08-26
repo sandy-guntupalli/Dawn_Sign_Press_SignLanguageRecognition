@@ -30,9 +30,14 @@ import cv2
 # Global variables for video recording
 video_writer = None
 recording = False
-output_filename = "recorded_video.avi"
+output_filename = "videos/recorded_video.avi"
 fps = 20.0
 frame_size = None
+
+if not os.path.exists('videos'):
+    os.makedirs('videos')
+
+output_filename = "videos/recorded_video.avi"
 
 def video_frame_callback(frame):
     global video_writer, recording, frame_size
