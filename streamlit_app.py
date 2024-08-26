@@ -1,6 +1,14 @@
-import cv2
 import streamlit as st
-import time
+from streamlit_webrtc import webrtc_streamer
+import av
+
+def video_frame_callback(frame):
+    img = frame.to_ndarray(format="bgr24")
+
+    # Process image if needed (e.g., convert to grayscale)
+    # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 def main():
     st.sidebar.title("ASL AI :i_love_you_hand_sign:")
@@ -10,29 +18,7 @@ def main():
     selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
     st.title("Webcam Live Feed")
 
-    run = st.checkbox('Run')
-    FRAME_WINDOW = st.image([])
-
-    camera = cv2.VideoCapture(0)
-
-    # Check if the camera is opened successfully
-    if not camera.isOpened():
-        st.error("Could not open the camera.")
-        return
-
-    # Small delay to ensure the camera is initialized
-    time.sleep(1)
-
-    while run:
-        ret, frame = camera.read()
-        if not ret:
-            st.error("Failed to capture image")
-            break
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        FRAME_WINDOW.image(frame)
-
-    camera.release()
-    st.write('Stopped')
+    webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
 
 if __name__ == "__main__":
     main()
