@@ -7,7 +7,7 @@ def video_frame_callback(frame):
 
     mirrored = img[:, ::-1, :]
 
-    return av.VideoFrame.from_ndarray(flipped, format="bgr24")
+    return av.VideoFrame.from_ndarray(mirrored, format="bgr24")
 
 def main():
     st.sidebar.title("ASL AI :i_love_you_hand_sign:")
