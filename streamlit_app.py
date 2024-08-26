@@ -89,43 +89,21 @@
 
 import cv2
 
-def main():
-    # Open the webcam (0 is usually the default camera)
-    cap = cv2.VideoCapture(0)
-    
-    if not cap.isOpened():
-        print("Error: Could not open webcam.")
-        return
+cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("Error: Could not open webcam.")
+    exit()
 
-    # Define codec and create VideoWriter object to save the video
-    fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter('output_video.avi', fourcc, 20.0, (int(cap.get(3)), int(cap.get(4))))
-    
-    while True:
-        # Capture frame-by-frame
-        ret, frame = cap.read()
-        
-        if not ret:
-            print("Error: Could not read frame.")
-            break
-        
-        # Optional: Flip the frame horizontally (mirror effect)
-        frame = cv2.flip(frame, 1)
-        
-        # Display the resulting frame
-        cv2.imshow('Webcam Live Feed', frame)
-        
-        # Write the frame to the video file
-        out.write(frame)
-        
-        # Break the loop on 'q' key press
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    
-    # When everything is done, release the capture and close the windows
-    cap.release()
-    out.release()
-    cv2.destroyAllWindows()
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("Error: Could not read frame.")
+        break
 
-if __name__ == "__main__":
-    main()
+    cv2.imshow('Test Window', frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
