@@ -87,23 +87,31 @@
 # if __name__ == "__main__":
 #     main()
 
-import cv2
+import streamlit as st
+from streamlit_webrtc import webrtc_streamer
+import av
 
-cap = cv2.VideoCapture(0)
-if not cap.isOpened():
-    print("Error: Could not open webcam.")
-    exit()
+# Option to flip the video horizontally
+flip = st.checkbox("Flip Horizontally")
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("Error: Could not read frame.")
-        break
+def video_frame_callback(frame: av.VideoFrame) -> av.VideoFrame:
+    # Convert frame to a NumPy array
+    img = frame.to_ndarray(format="bgr24")
+    
+    # Flip the video horizontally if the checkbox is selected
+    if flip:
+        img = img[:, ::-1, :]
 
-    cv2.imshow('Test Window', frame)
+    # Convert the frame back to av.VideoFrame
+    return av.VideoFrame.from_ndarray(img, format="bgr24")
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+def main():
+    st.title("Webcam Live Feed")
 
-cap.release()
-cv2.destroyAllWindows()
+    # Stream webcam feed
+    webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
+                    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+
+if __name__ == "__main__":
+    main()
+
