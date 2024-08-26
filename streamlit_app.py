@@ -31,7 +31,6 @@ import os
 # Global variables for video recording
 video_writer = None
 recording = False
-output_filename = "videos/recorded_video.avi"
 fps = 20.0
 frame_size = None
 
