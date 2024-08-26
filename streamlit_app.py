@@ -15,7 +15,12 @@ def main():
     selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
     st.title("Webcam Live Feed")
 
-    webrtc_streamer(key="example")
+    RTC_CONFIGURATION = webrtc_streamer({
+        rtc_configuration={  # Add this config
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
+    })
+    webrtc_streamer(key="example", rtc_configuration=RTC_CONFIGURATION)
 
 if __name__ == "__main__":
     main()
