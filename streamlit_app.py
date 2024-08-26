@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2
+import cv2 
 
 def main():
     st.sidebar.title("ASL AI " + ":i_love_you_hand_sign:")
