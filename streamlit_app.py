@@ -110,7 +110,7 @@ def main():
     st.sidebar.markdown("---")
 
 #     # Create custom navigation buttons
-    selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
+    selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Resources"])
     st.title("Webcam Live Feed")
 
     # Stream webcam feed
