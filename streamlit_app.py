@@ -17,7 +17,7 @@ def video_frame_callback(frame: av.VideoFrame) -> av.VideoFrame:
     return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 def main():
-    st.sidebar.title("ASL AI :i_love_you_hand_sign:")
+    st.sidebar.title("Check Your Sign")
     st.sidebar.markdown("---")
 
 #     # Create custom navigation buttons
