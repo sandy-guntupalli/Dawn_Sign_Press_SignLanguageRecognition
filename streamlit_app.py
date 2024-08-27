@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 import av
 
+st.set_page_config(
+    page_title = "Home"
+)
 # Option to flip the video horizontally
 flip = st.checkbox("Flip Horizontally")
 
