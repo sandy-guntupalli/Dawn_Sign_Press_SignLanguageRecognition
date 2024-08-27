@@ -107,10 +107,10 @@ def video_frame_callback(frame: av.VideoFrame) -> av.VideoFrame:
 
 def main():
     st.sidebar.title("ASL AI :i_love_you_hand_sign:")
-#     st.sidebar.markdown("---")
+    st.sidebar.markdown("---")
 
 #     # Create custom navigation buttons
-#     selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
+    selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
     st.title("Webcam Live Feed")
 
     # Stream webcam feed
