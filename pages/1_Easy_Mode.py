@@ -1,13 +1,16 @@
 import streamlit as st
+import cv2
 from styles import page_setup,page_with_webcam_video
 
 st.set_page_config(page_title="Easy Mode")
 
 # Check if 'page' exists in session state, if not, initialize it
-if "page" not in st.session_state:
-    st.session_state["page"] = "easypage"
+if "page" not in st.session_state or st.session_state["page"]!='easypage':
+    cv2.destroyAllWindows()
+    st.session_state["page"] = 'easypage'
+    cap = cv2.VideoCapture(cv2.CAP_DSHOW)
 
-st.session_state["page"] = "easypage"
+st.markdown(page_setup(), unsafe_allow_html=True)
 st.markdown(page_with_webcam_video(), unsafe_allow_html=True)
 
 if "alphabet" not in st.session_state:
