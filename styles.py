@@ -1,4 +1,59 @@
 import math
+
+def page_setup():
+    return """
+    <style>
+
+         /* Hide side toolbar buttons*/
+        div[data-testid="stToolbar"] {
+        visibility: hidden;
+        height: 0%;
+        position: fixed;
+        }
+
+        /* deccrease upper padding */
+        .st-emotion-cache-gh2jqd {
+            width: 100%;
+            padding: 0rem 1rem 10rem;
+            max-width: 46rem;
+        }
+
+        /* hide header */
+        header {
+        visibility: hidden;
+        height: 0%;
+        }
+
+        /* add logo in navbar */
+        [data-testid="stSidebar"] {
+            background-image: url(https://i.imgur.com/eelyBU4.png);
+            background-repeat: no-repeat;
+            padding-top: 50px;
+            background-position: 50px 50px;
+            background-size: 200px 70px; /* or specify the size you want */
+        }
+
+        /* placing log out button */
+        .st-emotion-cache-hc3laj {
+        position: fixed;
+        top: 10px;
+        right: 32.5px;
+        }
+
+        .st-emotion-cache-1u2dcfn {
+        display:none;
+        }
+
+        [data-testid="stSidebarNavSeparator"]{
+        display: none;
+        }
+
+       [data-testid="stSidebarNavItems"] {
+            max-height: none;
+        }
+    </style>
+    """
+    
 def page_with_webcam_video() :
     return """
         <style>
