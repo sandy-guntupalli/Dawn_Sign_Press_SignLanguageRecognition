@@ -1,4 +1,5 @@
 import streamlit as st
+from styles import page_setup,page_with_webcam_video
 
 st.set_page_config(page_title="Easy Mode")
 
