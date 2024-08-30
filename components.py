@@ -15,7 +15,7 @@ def progress_bar(prog):
             """
 
 def update_video(charachter):
-    if st.session_state["page"]=="learnpage":
+    if st.session_state["page"]=="easypage":
         return f"""
         <div class="video-wrapper">
         <div class="text-overlay">
