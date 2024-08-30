@@ -70,7 +70,7 @@ matched_placeholder = st.empty()
 prob = 0
 progress_bar_placeholder = st.empty()
 
-while True and st.session_state.page == "learnpage":
+while True and st.session_state.page == "easypage":
 
     if cap is not None or cap.isOpened():
         ret, frame = cap.read()
@@ -80,9 +80,9 @@ while True and st.session_state.page == "learnpage":
     if ret:
 
         charachter = ALPHABET_LIST[st.session_state["alphabet"]]
-        frame, prob = prediction_model(frame,charachter)
+        #frame, prob = prediction_model(frame,charachter)
 
-        webcam_placeholder.image(frame, channels="BGR")
+        #webcam_placeholder.image(frame, channels="BGR")
 
         progress_bar_placeholder.markdown(
             progress_bar(prob),
