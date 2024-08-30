@@ -1,4 +1,5 @@
 import streamlit as st
+from video_urls import video_urls
 
 def progress_bar(prog):
     if(prog > 0):
