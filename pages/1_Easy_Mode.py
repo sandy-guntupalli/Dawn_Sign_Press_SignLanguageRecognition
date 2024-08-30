@@ -5,6 +5,7 @@ import sqlite3
 import datetime
 from components import progress_bar,update_video
 from styles import page_setup,page_with_webcam_video
+from webcam import video_frame_callback
 
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
@@ -62,7 +63,9 @@ with col1:
         unsafe_allow_html=True,
     )
 with col2:
-    webcam_placeholder = st.empty()  # to display webcam
+    # Stream webcam feed
+    webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
+                    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
 matched_placeholder = st.empty()
 
