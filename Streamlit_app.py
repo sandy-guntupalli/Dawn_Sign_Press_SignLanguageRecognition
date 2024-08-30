@@ -5,58 +5,29 @@ import av
 st.set_page_config(
     page_title = "Home"
 )
-# Option to flip the video horizontally
-flip = st.checkbox("Flip Horizontally")
+
 
 def video_frame_callback(frame: av.VideoFrame) -> av.VideoFrame:
     # Convert frame to a NumPy array
     img = frame.to_ndarray(format="bgr24")
     
-    # Flip the video horizontally if the checkbox is selected
-    if flip:
-        img = img[:, ::-1, :]
+    # Flip the video horizontally 
+    img = img[:, ::-1, :]
 
     # Convert the frame back to av.VideoFrame
     return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 def main():
-    st.sidebar.title("Check Your Sign")
-    st.sidebar.markdown("---")
 
-#     # Create custom navigation buttons
-    selected_page = st.sidebar.radio(" ", ["Home", "Our Mission", "Easy Mode", "Hard Mode", "Resources"])
     st.title("Webcam Live Feed")
 
     # Stream webcam feed
-    webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
-                    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+    #webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
+                    #rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
 if __name__ == "__main__":
     main()
 
-# import streamlit as st
-# from streamlit_webrtc import webrtc_streamer
-# import av
-
-# def video_frame_callback(frame):
-#     img = frame.to_ndarray(format="bgr24")
-
-#     mirrored = img[:, ::-1, :]
-
-#     return av.VideoFrame.from_ndarray(mirrored, format="bgr24")
-
-# def main():
-#     st.sidebar.title("ASL AI :i_love_you_hand_sign:")
-#     st.sidebar.markdown("---")
-
-#     # Create custom navigation buttons
-#     selected_page = st.sidebar.radio(" ", ["Our Mission", "ASL Detection", "Text to ASL", "Resources"])
-#     st.title("Webcam Live Feed")
-#     webrtc_streamer(key="example", video_frame_callback=video_frame_callback, rtc_configuration={ "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-#     })
-
-# if __name__ == "__main__":
-#     main()
 
 # import streamlit as st
 # from streamlit_webrtc import webrtc_streamer
