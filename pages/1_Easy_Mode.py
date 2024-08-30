@@ -13,8 +13,8 @@ print(datetime.datetime.now())
 if "page" not in st.session_state or st.session_state["page"]!='easypage':
     cv2.destroyAllWindows()
     st.session_state["page"] = 'easypage'
-    cap = cv2.VideoCapture(cv2.CAP_DSHOW)
 
+cap = cv2.VideoCapture(cv2.CAP_DSHOW)
 conn = sqlite3.connect("signlingo.db")
 c = conn.cursor()
 
