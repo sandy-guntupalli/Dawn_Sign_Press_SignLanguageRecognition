@@ -15,7 +15,7 @@ def progress_bar(prog):
             </div>
             """
 
-def update_video(charachter):
+def update_video(character):
     if st.session_state["page"]=="easypage":
         return f"""
         <div class="video-wrapper">
