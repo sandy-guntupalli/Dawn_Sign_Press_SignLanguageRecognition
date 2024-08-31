@@ -94,6 +94,9 @@ while True and st.session_state.page == "easypage":
             unsafe_allow_html=True,
         )
 
+        time.sleep(5)
+        prob = 100
+
         if prob == 100:
             st.balloons()
 
