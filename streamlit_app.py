@@ -24,7 +24,7 @@ def main():
     """
     <style>
     .stApp {
-        background-color: #ADD8E6;  /* Light blue background */
+        background-color: #111184;  /* Light blue background */
     }
     </style>
     """,
