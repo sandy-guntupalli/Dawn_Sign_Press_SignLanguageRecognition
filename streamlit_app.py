@@ -1,4 +1,5 @@
 import streamlit as st
+from 1_Easy_Mode as easy
 
 st.set_page_config(
     page_title = "Home"
@@ -49,8 +50,8 @@ def main():
         hard_mode = st.button("Hard Mode")
     
     # Handle button clicks
-    # if easy_mode:
-    #     easy()
+    if easy_mode:
+        easy()
     # elif hard_mode:
     #     hard()
 
