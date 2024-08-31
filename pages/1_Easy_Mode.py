@@ -8,25 +8,8 @@ from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
 from webcam import video_frame_callback
 
-def set_font_style():
-    return """
-    <style>
-        /* Apply Century Gothic font to the whole app */
-        * {
-            font-family: 'Century Gothic', sans-serif;
-        }
-        
-        /* Specific styling for the title */
-        .st-bd h1 {
-            font-family: 'Century Gothic', sans-serif;
-        }
-    </style>
-    """
-
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
-
-st.markdown(set_font_style(), unsafe_allow_html=True)
 # Check if 'page' exists in session state, if not, initialize it
 if "page" not in st.session_state or st.session_state["page"]!='easypage':
     cv2.destroyAllWindows()
