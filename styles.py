@@ -42,6 +42,16 @@ def page_setup():
             font-family: 'Century Gothic', sans-serif;
         }
 
+        /* Apply Century Gothic font to the whole app */
+        * {
+            font-family: 'Century Gothic', sans-serif;
+        }
+        
+        /* Specific styling for the title */
+        .st-bd h1 {
+            font-family: 'Century Gothic', sans-serif;
+        }
+
     </style>
     """
     
