@@ -73,11 +73,11 @@ with col2:
     
 
 right_arrow_placeholder = st.empty()
-if st.button(">", key="right_arrow"):
-    right_click()
+if st.button("NEXT", key="right_arrow"):
+    right_click(video_placeholder=video_placeholder)
 left_arrow_placeholder = st.empty()
-if st.button("<", key="left_arrow"):
-    left_click()
+if st.button("BACK", key="left_arrow"):
+    left_click(video_placeholder=video_placeholder)
 matched_placeholder = st.empty()
 
 # creating the progress bar

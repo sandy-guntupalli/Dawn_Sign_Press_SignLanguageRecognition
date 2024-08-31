@@ -39,7 +39,7 @@ def update_video(charachter):
         """
 
 
-def right_click():
+def right_click(video_placeholder):
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
@@ -56,7 +56,7 @@ def right_click():
         unsafe_allow_html=True,
     )
 
-def left_click():
+def left_click(video_placeholder):
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
