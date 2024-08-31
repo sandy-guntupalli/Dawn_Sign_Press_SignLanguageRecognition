@@ -4,10 +4,22 @@ st.set_page_config(
     page_title = "Home"
 )
 
+def set_font_style():
+    return """
+    <style>
+        /* Apply Century Gothic font to the whole app */
+        * {
+            font-family: 'Century Gothic', sans-serif;
+        }
+        
+        /* Specific styling for the title */
+        .st-bd h1 {
+            font-family: 'Century Gothic', sans-serif;
+        }
+    </style>
+    """
 
 def main():
-
-    st.title("Check Your Sign")
     st.markdown(
     """
     <style>
@@ -16,8 +28,14 @@ def main():
     }
     </style>
     """,
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
+    
+    st.markdown(set_font_style(), unsafe_allow_html=True)
+
+    # Title with the new font
+    st.title("Check Your Sign")
+    
+    st.write("This text will also be in Century Gothic.")
 
 if __name__ == "__main__":
     main()
