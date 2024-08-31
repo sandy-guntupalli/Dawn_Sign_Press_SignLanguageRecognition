@@ -42,6 +42,7 @@ def page_setup():
         }
     </style>
     """
+st.markdown(page_setup(), unsafe_allow_html=True)
     
 def page_with_webcam_video() :
     return """
