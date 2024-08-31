@@ -3,7 +3,6 @@ import cv2
 import time
 import sqlite3
 import datetime
-import av
 from components import progress_bar,update_video
 from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
@@ -71,7 +70,11 @@ with col2:
     webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
                     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
     
-def right_click():
+
+
+
+right_arrow_placeholder = st.empty()
+if st.button("NEXT", key="right_arrow"):
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
@@ -87,9 +90,8 @@ def right_click():
         update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
         unsafe_allow_html=True,
     )
-
-
-def left_click():
+left_arrow_placeholder = st.empty()
+if st.button("BACK", key="left_arrow"):
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
@@ -105,14 +107,9 @@ def left_click():
         update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
         unsafe_allow_html=True,
     )
+shuffle_placeholder = st.empty()
+#if st.button("SHUFFLE", key="shuffle"):
 
-
-right_arrow_placeholder = st.empty()
-if st.button("NEXT", key="right_arrow"):
-    right_click()
-left_arrow_placeholder = st.empty()
-if st.button("BACK", key="left_arrow"):
-    left_click()
 matched_placeholder = st.empty()
 
 # creating the progress bar
