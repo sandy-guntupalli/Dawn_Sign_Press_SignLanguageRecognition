@@ -69,7 +69,8 @@ with col2:
 index = 0
 right_arrow_placeholder = st.empty()
 if st.button("NEXT", key="right_arrow"):
-    # video_placeholder.empty()
+    video_placeholder.empty()  # Clear the previous video
+    time.sleep(0.5)  # Small delay to prevent rapid updates
     # WORD_LIST[current_word_index] # Aroosh          
 
     # Aroosh
