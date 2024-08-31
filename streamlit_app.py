@@ -5,6 +5,7 @@ st.set_page_config(
 )
 
 pages = {
+    "home": "Home",
     "easypage": "Easy Mode",
     "hardpage": "Hard Mode",
     "about": "About",
