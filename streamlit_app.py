@@ -50,7 +50,7 @@ def main():
     
     # Handle button clicks
     if easy_mode:
-        1_Easy_Mode()
+        st.session_state.page = 'easypage'
     # elif hard_mode:
     #     hard()
 
