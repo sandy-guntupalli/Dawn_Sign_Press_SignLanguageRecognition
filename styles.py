@@ -55,17 +55,19 @@ def page_setup():
     </style>
     """
     
-def page_with_webcam_video() :
+def page_with_image_display():
     return """
         <style>
 
+        /* Image styling */
         img {
         border-radius: 1rem;
-        height:450px;
-        width:350px;
+        height: 450px;
+        width: 350px;
         }
 
-        .video-container {
+        /* Image container styling */
+        .image-container {
             position: relative;
             width: 100%;
             display: flex; /* Use flexbox */
@@ -74,7 +76,8 @@ def page_with_webcam_video() :
             padding: 2rem;
         }
 
-        .video-wrapper {
+        /* Image wrapper styling */
+        .image-wrapper {
         background-color: white;
         display: inline-block;
         width: 350px;
@@ -82,83 +85,30 @@ def page_with_webcam_video() :
         overflow: hidden;
         position: relative;
         border-radius: 1rem; 
-        align-content : center;
-        transform: scaleX(-1);
+        align-content: center;
         }
 
-        .video-wrapper video {
-        width: 100%;
-        z-index: 1; /* Ensure video is behind text */
-        }
-
-
+        /* Text overlay on image */
         .text-overlay {
             position: absolute; 
             left: 6%;
-            bottom: -7%;;
+            bottom: -7%;
             color: #683aff;
-            font-size:150px;
+            font-size: 150px;
             z-index: 2;
-            transform:scaleX(-1);
-            text-align: center; /* center the text horizontally */
+            text-align: center; /* Center the text horizontally */
         }
 
-        .video-wrapperquiz {
-        background-color: white;
-        width: 250px;
-        height: 250px;
-        overflow: hidden;
-        position: relative;
-        border-radius: 1rem;
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        }
-
-        .letterToFind {
-        font-size: 190px;
-        color: #ffe090;
-        max-height: 20rem;
-        text-align : center;
-        }
-
-        .progress-text {
-        margin-top: 10px;
-        text-align: center;
-        }
-
-        .progress-container {
-        width: 100%;
-        height: 2rem; 
-        background-color: #683aff;
-        border-radius: 5rem;
-        position: relative;
-        }
-
-        .progress-bar {
-        background-color: #ffe090; 
-        height: 100%;
-        border-radius: 5rem;
-        width: 0;
-        transition: width 0.3s ease-in-out;
-        text-align: center;
-        color: #683aff;
-        font-size: 20px;
-        font-weight: bold;
-        line-height: 2rem;
-        box-shadow: 10px 0 5px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
-        }
-
-        /* quiz question */
+        /* Quiz question text */
         .question-text {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Century Gothic', sans-serif;
         font-size: 18px;
-        color: #ffff;
+        color: #ffffff;
         text-align: center;
         margin-bottom: 20px;
         }
 
-        /* button */
+        /* Button styling */
         .st-emotion-cache-11to1yi {
         width: 100%;
         }   
