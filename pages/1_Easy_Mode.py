@@ -1,5 +1,4 @@
 import streamlit as st
-#import cv2
 import time
 import sqlite3
 import datetime
@@ -12,10 +11,8 @@ st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 # Check if 'page' exists in session state, if not, initialize it
 if "page" not in st.session_state or st.session_state["page"]!='easypage':
-    #cv2.destroyAllWindows()
     st.session_state["page"] = 'easypage'
 
-#cap = cv2.VideoCapture(cv2.CAP_DSHOW)
 conn = sqlite3.connect("signlingo.db")
 c = conn.cursor()
     
@@ -143,6 +140,4 @@ while True and st.session_state.page == "easypage":
 
         
 
-#cap.release()
-#cv2.destroyAllWindows()
 conn.close()
