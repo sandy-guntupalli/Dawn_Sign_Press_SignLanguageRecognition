@@ -69,8 +69,10 @@ with col1:
 with col2:
     # Stream webcam feed
     web_cam_placeholder = st.empty()
-    web_cam_placeholder.webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
-                    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+    web_cam_placeholder.markdown(
+        webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
+                        rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+    )
 
 right_arrow_placeholder = st.empty()
 right_arrow_placeholder.markdown(right_arrow(), unsafe_allow_html=True)
