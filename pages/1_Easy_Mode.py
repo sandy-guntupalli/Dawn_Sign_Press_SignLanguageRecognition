@@ -8,6 +8,21 @@ from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
 from webcam import video_frame_callback
 
+def set_font_style():
+    return """
+    <style>
+        /* Apply Century Gothic font to the whole app */
+        * {
+            font-family: 'Century Gothic', sans-serif;
+        }
+        
+        /* Specific styling for the title */
+        .st-bd h1 {
+            font-family: 'Century Gothic', sans-serif;
+        }
+    </style>
+    """
+
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 
