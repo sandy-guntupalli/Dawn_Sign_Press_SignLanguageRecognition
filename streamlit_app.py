@@ -1,4 +1,5 @@
 import streamlit as st
+from 1_Easy_Mode as easy
 
 st.set_page_config(
     page_title = "Home"
@@ -24,7 +25,7 @@ def main():
     """
     <style>
     .stApp {
-        background-color: #ADD8E6;  /* Light blue background */
+        background-color: #89CDD3;  /* Light blue background */
     }
     </style>
     """,
@@ -36,6 +37,23 @@ def main():
     st.title("Check Your Sign")
     
     st.write("Welcome to Check Your Sign! In this fun and interactive site you will be able to learn sign language using our easy and hard mode.")
+
+    st.title("Choose Your Mode")
+    
+    # Create two buttons: Easy Mode and Hard Mode
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        easy_mode = st.button("Easy Mode")
+    
+    with col2:
+        hard_mode = st.button("Hard Mode")
+    
+    # Handle button clicks
+    if easy_mode:
+        easy()
+    # elif hard_mode:
+    #     hard()
 
 if __name__ == "__main__":
     main()
