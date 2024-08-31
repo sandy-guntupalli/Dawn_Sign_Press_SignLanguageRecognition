@@ -8,6 +8,16 @@ st.set_page_config(
 def main():
 
     st.title("Check Your Sign")
+    st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #ADD8E6;  /* Light blue background */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 if __name__ == "__main__":
     main()
