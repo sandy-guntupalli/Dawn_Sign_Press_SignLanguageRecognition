@@ -81,6 +81,7 @@ left_arrow_placeholder = st.empty()
 left_arrow = tk.Button(root, text="<", command=left_click)
 left_arrow.pack()
 matched_placeholder = st.empty()
+root.mainloop()
 
 # creating the progress bar
 prob = 0
