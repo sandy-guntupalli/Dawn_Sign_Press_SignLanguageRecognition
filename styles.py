@@ -32,10 +32,26 @@ def page_setup():
         [data-testid="stSidebarNavSeparator"]{
         display: none;
         }
-
-       [data-testid="stSidebarNavItems"] {
+        [data-testid="stSidebarNavItems"] {
             max-height: none;
+            font-family: 'Century Gothic', sans-serif;
         }
+
+        /* Apply Century Gothic font to the entire app */
+        * {
+            font-family: 'Century Gothic', sans-serif;
+        }
+
+        /* Apply Century Gothic font to the whole app */
+        * {
+            font-family: 'Century Gothic', sans-serif;
+        }
+        
+        /* Specific styling for the title */
+        .st-bd h1 {
+            font-family: 'Century Gothic', sans-serif;
+        }
+
     </style>
     """
     
