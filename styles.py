@@ -36,6 +36,10 @@ def page_setup():
        [data-testid="stSidebarNavItems"] {
             max-height: none;
         }
+        /* Set background color for the entire app */
+        .stApp {
+            background-color: #ADD8E6;  /* Light blue background */
+        }
     </style>
     """
     
