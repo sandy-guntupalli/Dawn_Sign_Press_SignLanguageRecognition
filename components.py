@@ -39,4 +39,37 @@ def update_video(charachter):
         """
 
 
+def right_click():
+    video_placeholder.empty()
+    # WORD_LIST[current_word_index] # Aroosh          
+
+    # Aroosh
+
+    print(st.session_state["alphabet"])
+
+    st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
+
+    time.sleep(1)
+
+    video_placeholder.markdown(
+        update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+        unsafe_allow_html=True,
+    )
+
+def left_click():
+    video_placeholder.empty()
+    # WORD_LIST[current_word_index] # Aroosh          
+
+    # Aroosh
+
+    print(st.session_state["alphabet"])
+
+    st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
+
+    time.sleep(1)
+
+    video_placeholder.markdown(
+        update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+        unsafe_allow_html=True,
+    )
 

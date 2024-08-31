@@ -4,11 +4,13 @@ import time
 import sqlite3
 import datetime
 import av
-from components import progress_bar,update_video
+import tkinter as tk
+from components import progress_bar,update_video,right_click,left_click
 from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
 from webcam import video_frame_callback
 
+root = tk.Tk()
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 
@@ -73,7 +75,11 @@ with col2:
     
 
 right_arrow_placeholder = st.empty()
+right_arrow = tk.Button(root, text=">", command=right_click)
+right_arrow.pack()
 left_arrow_placeholder = st.empty()
+left_arrow = tk.Button(root, text="<", command=left_click)
+left_arrow.pack()
 matched_placeholder = st.empty()
 
 # creating the progress bar
@@ -104,40 +110,8 @@ while True and st.session_state.page == "easypage":
     #if prob == 100:
     #    st.balloons()
 
-    
-    if right_arrow_placeholder.button(">"):
-        video_placeholder.empty()
-        # WORD_LIST[current_word_index] # Aroosh          
 
-        # Aroosh
-
-        print(st.session_state["alphabet"])
-
-        st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
-
-        time.sleep(1)
-
-        video_placeholder.markdown(
-            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-            unsafe_allow_html=True,
-        )
-    
-    if left_arrow_placeholder.button("<"):
-        video_placeholder.empty()
-        # WORD_LIST[current_word_index] # Aroosh          
-
-        # Aroosh
-
-        print(st.session_state["alphabet"])
-
-        st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
-
-        time.sleep(1)
-
-        video_placeholder.markdown(
-            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-            unsafe_allow_html=True,
-        )
+        
 
 cap.release()
 cv2.destroyAllWindows()
