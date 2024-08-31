@@ -4,13 +4,11 @@ import time
 import sqlite3
 import datetime
 import av
-import tkinter as tk
 from components import progress_bar,update_video,right_click,left_click
 from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
 from webcam import video_frame_callback
 
-root = tk.Tk()
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 
@@ -75,13 +73,12 @@ with col2:
     
 
 right_arrow_placeholder = st.empty()
-right_arrow = tk.Button(root, text=">", command=right_click)
-right_arrow.pack()
+if st.button(">", key="right_arrow"):
+    right_click()
 left_arrow_placeholder = st.empty()
-left_arrow = tk.Button(root, text="<", command=left_click)
-left_arrow.pack()
+if st.button("<", key="left_arrow"):
+    left_click()
 matched_placeholder = st.empty()
-root.mainloop()
 
 # creating the progress bar
 prob = 0
