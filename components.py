@@ -19,20 +19,8 @@ def update_video(charachter):
     if st.session_state["page"]=="easypage":
         return f"""
         <div class="video-wrapper">
-        <div class="text-overlay">
-            {charachter}
-        </div>
         <video width="350" height="290" autoplay controlsList="nodownload" loop style="transform: scale(1.75);">
-            <source src="{video_urls[charachter]}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        </div> 
-        """
-    else:
-        return f"""
-        <div class="video-wrapper">
-        <video width="350" height="290" autoplay controlsList="nodownload" loop style="transform: scale(1.75);">
-            <source src="{video_urls[charachter]}" type="video/mp4">
+            <source src="{video_urls[charachter]}" type="image/png">
             Your browser does not support the video tag.
         </video>
         </div>
