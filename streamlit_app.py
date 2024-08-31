@@ -37,6 +37,23 @@ def main():
     
     st.write("Welcome to Check Your Sign! In this fun and interactive site you will be able to learn sign language using our easy and hard mode.")
 
+    st.title("Choose Your Mode")
+    
+    # Create two buttons: Easy Mode and Hard Mode
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        easy_mode = st.button("Easy Mode")
+    
+    with col2:
+        hard_mode = st.button("Hard Mode")
+    
+    # Handle button clicks
+    if easy_mode:
+        st.write("You selected Easy Mode!")
+    elif hard_mode:
+        st.write("You selected Hard Mode!")
+
 if __name__ == "__main__":
     main()
 
