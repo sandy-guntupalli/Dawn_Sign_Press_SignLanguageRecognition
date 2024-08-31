@@ -23,11 +23,10 @@ def set_font_style():
     </style>
     """
 
-st.markdown(set_font_style(), unsafe_allow_html=True)
-
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 
+st.markdown(set_font_style(), unsafe_allow_html=True)
 # Check if 'page' exists in session state, if not, initialize it
 if "page" not in st.session_state or st.session_state["page"]!='easypage':
     cv2.destroyAllWindows()
