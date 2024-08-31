@@ -4,7 +4,7 @@ import time
 import sqlite3
 import datetime
 import av
-from components import progress_bar,update_video
+from components import progress_bar,update_video,right_arrow,left_arrow
 from styles import page_setup,page_with_webcam_video
 from streamlit_webrtc import webrtc_streamer
 from webcam import video_frame_callback
@@ -44,14 +44,16 @@ ALPHABET_LIST = {
     13:"N",
     14:"O",
     15:"P",
-    16:"R",
-    17:"S",
-    18:"T",
-    19:"U",
-    20:"V",
-    21:"W",
-    22:"X",
-    23:"Y",
+    16:"Q",
+    17:"R",
+    18:"S",
+    19:"T",
+    20:"U",
+    21:"V",
+    22:"W",
+    23:"X",
+    24:"Y",
+    25:"Z"
 }
 
 NUM_ALPHABETS = len(ALPHABET_LIST)
@@ -66,8 +68,15 @@ with col1:
     )
 with col2:
     # Stream webcam feed
-    webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
+    web_cam_placeholder = st.empty()
+    web_cam_placeholder.webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
                     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+
+right_arrow_placeholder = st.empty()
+right_arrow_placeholder.markdown(right_arrow(), unsafe_allow_html=True)
+
+left_arrow_placeholder = st.empty()
+left_arrow_placeholder.markdown(left_arrow(), unsafe_allow_html=True)
 
 matched_placeholder = st.empty()
 
@@ -99,18 +108,10 @@ while True and st.session_state.page == "easypage":
     if prob == 100:
         st.balloons()
 
+    
+    if right_arrow_placeholder.button("Next"):
         video_placeholder.empty()
-        # WORD_LIST[current_word_index] # Aroosh
-        try:
-            c.execute(
-                """INSERT INTO Alphabet (username, letter) VALUES (?, ?)""",
-                (current_user["username"], charachter),
-            )
-            print("added_letter")
-            conn.commit()
-            pass
-        except Exception as e:
-            print(e)            
+        # WORD_LIST[current_word_index] # Aroosh          
 
         # Aroosh
 

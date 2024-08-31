@@ -37,3 +37,14 @@ def update_video(charachter):
         </video>
         </div>
         """
+
+def right_arrow():
+    return """
+    <button>&#8594;</button>
+    """
+
+def left_arrow():
+    return """
+    <button>&#8592;</button>
+    """
+
