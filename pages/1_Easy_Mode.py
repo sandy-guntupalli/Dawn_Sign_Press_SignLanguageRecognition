@@ -70,9 +70,7 @@ with col2:
     webrtc_streamer(key="example", video_frame_callback=video_frame_callback, 
                     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
     
-
-
-
+index = 0
 right_arrow_placeholder = st.empty()
 if st.button("NEXT", key="right_arrow"):
     video_placeholder.empty()
@@ -83,7 +81,7 @@ if st.button("NEXT", key="right_arrow"):
     print(st.session_state["alphabet"])
 
     st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
-
+    index += 1
     time.sleep(1)
 
     video_placeholder.markdown(
@@ -100,6 +98,7 @@ if st.button("BACK", key="left_arrow"):
     print(st.session_state["alphabet"])
 
     st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
+    index -= 1
 
     time.sleep(1)
 
@@ -109,6 +108,8 @@ if st.button("BACK", key="left_arrow"):
     )
 shuffle_placeholder = st.empty()
 #if st.button("SHUFFLE", key="shuffle"):
+#    video_placeholder.empty()
+
 
 matched_placeholder = st.empty()
 
