@@ -1,5 +1,4 @@
 import streamlit as st
-from pages/1_Easy_Mode import 1_Easy_Mode
 
 st.set_page_config(
     page_title = "Home"
