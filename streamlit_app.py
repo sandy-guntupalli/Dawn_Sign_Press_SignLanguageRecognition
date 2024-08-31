@@ -27,6 +27,9 @@ def set_font_style():
     </style>
     """
 
+def navigate_to(page):
+    st.session_state.page = page
+
 def main():
     st.markdown(
     """
@@ -58,8 +61,8 @@ def main():
     
     # Handle button clicks
     if easy_mode:
-        st.session_state.page = "easypage"
-        st.experimental_rerun()  # Rerun the app to navigate to the Easy Mode page
+        navigate_to("easypage")
+        #st.experimental_rerun()  # Rerun the app to navigate to the Easy Mode page
     
     # elif hard_mode:
     #     hard()
