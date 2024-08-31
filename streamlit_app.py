@@ -10,7 +10,7 @@ def main():
     st.title("Check Your Sign")
     st.sidebar.markdown("---")
     
-    selected_page = st.sidebar.radio(" ", ["Our Mission", , "Resources"])
+    selected_page = st.sidebar.radio(" ", ["Our Mission", "Resources"])
 
 
 if __name__ == "__main__":
