@@ -88,10 +88,10 @@ progress_bar_placeholder = st.empty()
 
 while True and st.session_state.page == "easypage":
     time.sleep(5)
-    #if cap is not None or cap.isOpened():
-    #    ret, frame = cap.read()
-    #else:
-    #    st.write("loading")
+    if cap is not None or cap.isOpened():
+        ret, frame = cap.read()
+    else:
+        st.write("loading")
 
     #if ret:
 
@@ -100,15 +100,15 @@ while True and st.session_state.page == "easypage":
 
     #webcam_placeholder.image(frame, channels="BGR")
 
-    progress_bar_placeholder.markdown(
-        progress_bar(prob),
-        unsafe_allow_html=True,
-    )
+    #progress_bar_placeholder.markdown(
+    #    progress_bar(prob),
+    #    unsafe_allow_html=True,
+    #)
 
-    prob = 100
+    #prob = 100
 
-    if prob == 100:
-        st.balloons()
+    #if prob == 100:
+    #    st.balloons()
 
     
     if right_arrow_placeholder.isclicked():
