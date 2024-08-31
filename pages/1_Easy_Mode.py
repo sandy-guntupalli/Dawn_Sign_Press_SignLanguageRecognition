@@ -73,11 +73,7 @@ with col2:
     
 
 right_arrow_placeholder = st.empty()
-right_arrow_placeholder.markdown(right_arrow(), unsafe_allow_html=True)
-
 left_arrow_placeholder = st.empty()
-left_arrow_placeholder.markdown(left_arrow(), unsafe_allow_html=True)
-
 matched_placeholder = st.empty()
 
 # creating the progress bar
@@ -109,7 +105,7 @@ while True and st.session_state.page == "easypage":
     #    st.balloons()
 
     
-    if True:
+    if right_arrow_placeholder.button(right_arrow()):
         video_placeholder.empty()
         # WORD_LIST[current_word_index] # Aroosh          
 
@@ -119,7 +115,24 @@ while True and st.session_state.page == "easypage":
 
         st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
 
-        time.sleep(2)
+        time.sleep(1)
+
+        video_placeholder.markdown(
+            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+            unsafe_allow_html=True,
+        )
+    
+    if left_arrow_placeholder.button(left_arrow()):
+        video_placeholder.empty()
+        # WORD_LIST[current_word_index] # Aroosh          
+
+        # Aroosh
+
+        print(st.session_state["alphabet"])
+
+        st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
+
+        time.sleep(1)
 
         video_placeholder.markdown(
             update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
