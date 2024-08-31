@@ -23,6 +23,8 @@ def set_font_style():
     </style>
     """
 
+st.markdown(set_font_style(), unsafe_allow_html=True)
+
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 
