@@ -111,7 +111,7 @@ while True and st.session_state.page == "easypage":
         st.balloons()
 
     
-    if right_arrow_placeholder.button("Next"):
+    if right_arrow_placeholder.isclicked():
         video_placeholder.empty()
         # WORD_LIST[current_word_index] # Aroosh          
 
