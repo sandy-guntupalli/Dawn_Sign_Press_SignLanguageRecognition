@@ -76,55 +76,54 @@ prob = 0
 progress_bar_placeholder = st.empty()
 
 while True and st.session_state.page == "easypage":
+    time.sleep(5)
+    #if cap is not None or cap.isOpened():
+    #    ret, frame = cap.read()
+    #else:
+    #    st.write("loading")
 
-    if cap is not None or cap.isOpened():
-        ret, frame = cap.read()
-    else:
-        st.write("loading")
+    #if ret:
 
-    if ret:
+    charachter = ALPHABET_LIST[st.session_state["alphabet"]]
+    #frame, prob = prediction_model(frame,charachter)
 
-        charachter = ALPHABET_LIST[st.session_state["alphabet"]]
-        #frame, prob = prediction_model(frame,charachter)
+    #webcam_placeholder.image(frame, channels="BGR")
 
-        #webcam_placeholder.image(frame, channels="BGR")
+    progress_bar_placeholder.markdown(
+        progress_bar(prob),
+        unsafe_allow_html=True,
+    )
 
-        progress_bar_placeholder.markdown(
-            progress_bar(prob),
+    prob = 100
+
+    if prob == 100:
+        st.balloons()
+
+        video_placeholder.empty()
+        # WORD_LIST[current_word_index] # Aroosh
+        try:
+            c.execute(
+                """INSERT INTO Alphabet (username, letter) VALUES (?, ?)""",
+                (current_user["username"], charachter),
+            )
+            print("added_letter")
+            conn.commit()
+            pass
+        except Exception as e:
+            print(e)            
+
+        # Aroosh
+
+        print(st.session_state["alphabet"])
+
+        st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
+
+        time.sleep(2)
+
+        video_placeholder.markdown(
+            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
             unsafe_allow_html=True,
         )
-
-        time.sleep(5)
-        prob = 100
-
-        if prob == 100:
-            st.balloons()
-
-            video_placeholder.empty()
-            # WORD_LIST[current_word_index] # Aroosh
-            try:
-                c.execute(
-                    """INSERT INTO Alphabet (username, letter) VALUES (?, ?)""",
-                    (current_user["username"], charachter),
-                )
-                print("added_letter")
-                conn.commit()
-                pass
-            except Exception as e:
-                print(e)            
-
-            # Aroosh
-
-            print(st.session_state["alphabet"])
-
-            st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
-
-            time.sleep(2)
-
-            video_placeholder.markdown(
-                update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-                unsafe_allow_html=True,
-            )
 
 cap.release()
 cv2.destroyAllWindows()
