@@ -105,7 +105,7 @@ while True and st.session_state.page == "easypage":
     #    st.balloons()
 
     
-    if right_arrow_placeholder.button(right_arrow()):
+    if right_arrow_placeholder.button(">"):
         video_placeholder.empty()
         # WORD_LIST[current_word_index] # Aroosh          
 
@@ -122,7 +122,7 @@ while True and st.session_state.page == "easypage":
             unsafe_allow_html=True,
         )
     
-    if left_arrow_placeholder.button(left_arrow()):
+    if left_arrow_placeholder.button("<"):
         video_placeholder.empty()
         # WORD_LIST[current_word_index] # Aroosh          
 
