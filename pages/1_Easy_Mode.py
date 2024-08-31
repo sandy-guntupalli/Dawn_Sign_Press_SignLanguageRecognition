@@ -18,21 +18,6 @@ if "page" not in st.session_state or st.session_state["page"]!='easypage':
 cap = cv2.VideoCapture(cv2.CAP_DSHOW)
 conn = sqlite3.connect("signlingo.db")
 c = conn.cursor()
-
-def set_font_style():
-    return """
-    <style>
-        /* Apply Century Gothic font to the whole app */
-        * {
-            font-family: 'Century Gothic', sans-serif;
-        }
-        
-        /* Specific styling for the title */
-        .st-bd h1 {
-            font-family: 'Century Gothic', sans-serif;
-        }
-    </style>
-    """
     
 st.markdown(page_setup(), unsafe_allow_html=True)
 st.markdown(page_with_webcam_video(), unsafe_allow_html=True)
