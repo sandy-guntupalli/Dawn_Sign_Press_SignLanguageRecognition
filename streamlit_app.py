@@ -1,4 +1,6 @@
 import streamlit as st
+import 1_Easy_Mode as easy
+import 2_Hard_Mode as hard
 
 st.set_page_config(
     page_title = "Home"
@@ -50,9 +52,9 @@ def main():
     
     # Handle button clicks
     if easy_mode:
-        st.write("You selected Easy Mode!")
+        easy()
     elif hard_mode:
-        st.write("You selected Hard Mode!")
+        hard()
 
 if __name__ == "__main__":
     main()
