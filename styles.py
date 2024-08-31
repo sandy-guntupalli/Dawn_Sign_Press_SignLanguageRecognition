@@ -55,7 +55,7 @@ def page_setup():
     </style>
     """
     
-def page_with_image_display():
+def page_with_webcam_video():
     return """
         <style>
 
