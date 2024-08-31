@@ -19,7 +19,7 @@ def update_video(charachter):
     if st.session_state["page"]=="easypage":
         return f"""
         <div class="video-wrapper">
-        <img src="{image_urls[character]}" width="350" height="290" style="transform: scale(1.75); border-radius: 1rem;">
+        <img src="{video_urls[character]}" width="350" height="290" style="transform: scale(1.75); border-radius: 1rem;">
         </div>
         """
 
