@@ -36,13 +36,8 @@ def page_setup():
        [data-testid="stSidebarNavItems"] {
             max-height: none;
         }
-        /* Set background color for the entire app */
-        .stApp {
-            background-color: #ADD8E6;  /* Light blue background */
-        }
     </style>
     """
-st.markdown(page_setup(), unsafe_allow_html=True)
     
 def page_with_webcam_video() :
     return """
