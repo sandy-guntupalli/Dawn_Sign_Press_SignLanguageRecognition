@@ -1,9 +1,16 @@
 import streamlit as st
-from 1_Easy_Mode as easy
 
 st.set_page_config(
     page_title = "Home"
 )
+
+pages = {
+    "easypage": "Easy Mode",
+    "hardpage": "Hard Mode",
+    "about": "About",
+    "credits": "Credits"
+}
+
 
 def set_font_style():
     return """
