@@ -35,7 +35,7 @@ def main():
     # Title with the new font
     st.title("Check Your Sign")
     
-    st.write("This text will also be in Century Gothic.")
+    st.write("Welcome to Check Your Sign! In this fun and interactive site you will be able to learn sign language using our easy and hard mode.")
 
 if __name__ == "__main__":
     main()
