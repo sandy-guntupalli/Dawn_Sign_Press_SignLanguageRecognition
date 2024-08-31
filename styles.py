@@ -130,7 +130,7 @@ def page_with_webcam_video() :
         }
 
         .video-wrapper {
-        # background-color: white;
+        background-color: white;
         display: inline-block;
         width: 350px;
         height: 450px;
