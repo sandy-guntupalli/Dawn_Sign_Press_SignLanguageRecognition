@@ -58,8 +58,7 @@ def main():
     
     # Handle button clicks
     if easy_mode:
-        st.session_state.page = "Easy Mode"
-        st.experimental_rerun()  # Rerun the app to navigate to the Easy Mode page
+        st.session_state.page = "easypage"
     
     # elif hard_mode:
     #     hard()
