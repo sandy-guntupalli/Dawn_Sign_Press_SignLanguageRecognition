@@ -24,21 +24,6 @@ def page_setup():
         height: 0%;
         }
 
-        /* add logo in navbar */
-        [data-testid="stSidebar"] {
-            background-image: url(https://i.imgur.com/eelyBU4.png);
-            background-repeat: no-repeat;
-            padding-top: 50px;
-            background-position: 50px 50px;
-            background-size: 200px 70px; /* or specify the size you want */
-        }
-
-        /* placing log out button */
-        .st-emotion-cache-hc3laj {
-        position: fixed;
-        top: 10px;
-        right: 32.5px;
-        }
 
         .st-emotion-cache-1u2dcfn {
         display:none;
