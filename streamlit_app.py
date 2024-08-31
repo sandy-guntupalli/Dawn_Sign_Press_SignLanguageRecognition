@@ -33,14 +33,6 @@ def navigate_to(page):
 
 def main():
 
-    # Simple function to display the image
-    def display_image(character):
-        gif_url = f"https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/{character.lower()}.gif"
-        
-        st.image(gif_url, width=350, caption=f"Sign language: {character}")
-    
-    # Test the function by showing a sample image
-    display_image("A")
     st.markdown(
     """
     <style>
