@@ -112,18 +112,11 @@ prob = 0
 progress_bar_placeholder = st.empty()
 
 while True and st.session_state.pages == "easypage":
-    time.sleep(5)
-    #if cap is not None or cap.isOpened():
-    #    ret, frame = cap.read()
-    #else:
-    #    st.write("loading")
-
-    #if ret:
-
+    time.sleep(1)
     charachter = ALPHABET_LIST[st.session_state["alphabet"]]
-    #frame, prob = prediction_model(frame,charachter)
-
-    #webcam_placeholder.image(frame, channels="BGR")
+    if (st.session_state["alphabet"] == 0):
+        left_arrow_placeholder = st.empty()
+    
 
     #progress_bar_placeholder.markdown(
     #    progress_bar(prob),
