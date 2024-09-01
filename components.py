@@ -25,7 +25,7 @@ def update_video(character):
             {character}
         </div>
         <video width="350" height="290" autoplay controlsList="nodownload" loop style="transform: scale(1.75);">
-            <source src="{urls[character]}" type="video/mp4">
+            <source src="{video_urls[character]}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         </div> 
