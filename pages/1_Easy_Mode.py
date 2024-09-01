@@ -9,8 +9,8 @@ from webcam import video_frame_callback
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 # Check if 'page' exists in session state, if not, initialize it
-#if "pages" not in st.session_state or st.session_state["pages"]!='easypage':
-#    st.session_state["pages"] = 'easypage'
+if "pages" not in st.session_state or st.session_state["pages"]!='easypage':
+    st.session_state["pages"] = 'easypage'
 
     
 st.markdown(page_setup(), unsafe_allow_html=True)
