@@ -10,11 +10,11 @@ from webcam import video_frame_callback
 st.set_page_config(page_title="Easy Mode")
 print(datetime.datetime.now())
 # Check if 'page' exists in session state, if not, initialize it
-if "page" not in st.session_state or st.session_state["page"]!='easypage':
-    st.session_state["page"] = 'easypage'
+if "pages" not in st.session_state or st.session_state["pages"]!='easypage':
+    st.session_state["pages"] = 'easypage'
 
-conn = sqlite3.connect("signlingo.db")
-c = conn.cursor()
+#conn = sqlite3.connect("signlingo.db")
+#c = conn.cursor()
     
 st.markdown(page_setup(), unsafe_allow_html=True)
 st.markdown(page_with_webcam_video(), unsafe_allow_html=True)
