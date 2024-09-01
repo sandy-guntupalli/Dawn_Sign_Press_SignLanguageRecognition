@@ -65,7 +65,7 @@ with col2:
     
 index = 0
 right_arrow_placeholder = st.empty()
-if st.button("NEXT", key="right_arrow"):
+if st.button("NEXT", key="right_arrow_placeholder"):
     video_placeholder.empty()  # Clear the previous video
     time.sleep(0.5)  # Small delay to prevent rapid updates
     # WORD_LIST[current_word_index] # Aroosh          
@@ -83,7 +83,7 @@ if st.button("NEXT", key="right_arrow"):
         unsafe_allow_html=True,
     )
 left_arrow_placeholder = st.empty()
-if st.button("BACK", key="left_arrow"):
+if st.button("BACK", key="left_arrow_placeholder"):
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
@@ -100,8 +100,7 @@ if st.button("BACK", key="left_arrow"):
         update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
         unsafe_allow_html=True,
     )
-if (st.session_state["alphabet"] == 0):
-        left_arrow_placeholder = st.empty()
+
 shuffle_placeholder = st.empty()
 #if st.button("SHUFFLE", key="shuffle"):
 #    video_placeholder.empty()
