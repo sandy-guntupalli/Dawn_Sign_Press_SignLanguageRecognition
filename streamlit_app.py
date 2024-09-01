@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(
     page_title = "Home"
@@ -28,9 +29,6 @@ def set_font_style():
     </style>
     """
 
-def navigate_to(page):
-    st.session_state.page = page
-    st.experimental_rerun()
 
 def main():
 
@@ -64,11 +62,10 @@ def main():
     
     # Handle button clicks
     if easy_mode:
-        navigate_to("easypage")
-        #st.experimental_rerun()  # Rerun the app to navigate to the Easy Mode page
+        st.switch_page("./pages/1_Easy_Mode.py")
     
-    # elif hard_mode:
-    #     hard()
+    elif hard_mode:
+        st.switch_page("./pages/2_Hard_Mode.py")
 
 if __name__ == "__main__":
     main()
