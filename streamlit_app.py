@@ -30,6 +30,7 @@ def set_font_style():
 
 def navigate_to(page):
     st.session_state.page = page
+    st.experimental_rerun()
 
 def main():
 
