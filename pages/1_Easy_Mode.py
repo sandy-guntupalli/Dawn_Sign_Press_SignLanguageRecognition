@@ -111,7 +111,7 @@ matched_placeholder = st.empty()
 prob = 0
 progress_bar_placeholder = st.empty()
 
-while True and st.session_state.page == "easypage":
+while True and st.session_state.pages == "easypage":
     time.sleep(5)
     #if cap is not None or cap.isOpened():
     #    ret, frame = cap.read()
