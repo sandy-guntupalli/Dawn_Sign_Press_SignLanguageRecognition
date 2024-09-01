@@ -20,7 +20,13 @@ def update_video(character):
         #gif_url = f"https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/{character.lower()}.gif"
         #st.image(gif_url, width=350, caption=f"Sign language: {character}")
         return f"""
-        <div style="text-align: center;">
-        <img src="{gif_url}" alt="Sign language gif" style="width: 350px; height: 290px;">
+        <div class="video-wrapper">
+        <div class="text-overlay">
+            {character}
         </div>
+        <video width="350" height="290" autoplay controlsList="nodownload" loop style="transform: scale(1.75);">
+            <source src="{urls[character]}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div> 
         """
