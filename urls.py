@@ -1,5 +1,5 @@
 video_urls = {
-    "A": "https://drive.google.com/file/d/1aSX0NSuFCiyl1DYgmjV76LCaWOcH6FIb/view?usp=sharing",
+    "A": "https://videos-asl.lingvano.com/9099-480p.mp4",
     "B": "https://videos-asl.lingvano.com/9101-480p.mp4",
     "C": "https://videos-asl.lingvano.com/9102-480p.mp4",
     "D": "https://videos-asl.lingvano.com/9133-480p.mp4",
