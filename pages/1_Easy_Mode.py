@@ -100,6 +100,8 @@ if st.button("BACK", key="left_arrow"):
         update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
         unsafe_allow_html=True,
     )
+if (st.session_state["alphabet"] == 0):
+        left_arrow_placeholder = st.empty()
 shuffle_placeholder = st.empty()
 #if st.button("SHUFFLE", key="shuffle"):
 #    video_placeholder.empty()
@@ -112,7 +114,7 @@ prob = 0
 progress_bar_placeholder = st.empty()
 
 while True and st.session_state.pages == "easypage":
-    time.sleep(1)
+    time.sleep(.1)
     charachter = ALPHABET_LIST[st.session_state["alphabet"]]
     if (st.session_state["alphabet"] == 0):
         left_arrow_placeholder = st.empty()
