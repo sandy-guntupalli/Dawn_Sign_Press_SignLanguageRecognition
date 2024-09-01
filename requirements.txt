@@ -1,3 +1,4 @@
 streamlit
 opencv-python-headless
 streamlit_webrtc
+streamlit_extras==0.2.7
