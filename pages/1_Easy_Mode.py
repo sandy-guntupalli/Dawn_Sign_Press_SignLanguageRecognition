@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-import sqlite3
 import datetime
 from components import progress_bar,update_video
 from styles import page_setup,page_with_webcam_video
@@ -13,8 +12,6 @@ print(datetime.datetime.now())
 if "pages" not in st.session_state or st.session_state["pages"]!='easypage':
     st.session_state["pages"] = 'easypage'
 
-#conn = sqlite3.connect("signlingo.db")
-#c = conn.cursor()
     
 st.markdown(page_setup(), unsafe_allow_html=True)
 st.markdown(page_with_webcam_video(), unsafe_allow_html=True)
@@ -141,4 +138,3 @@ while True and st.session_state.page == "easypage":
 
         
 
-conn.close()
