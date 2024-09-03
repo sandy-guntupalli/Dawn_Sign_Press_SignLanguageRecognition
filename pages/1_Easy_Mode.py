@@ -90,24 +90,9 @@ with col2:
     
 index = 0
 right_arrow_placeholder = st.empty()
-if st.button("NEXT", key="right_arrow_placeholder"):
-    video_placeholder.empty()  # Clear the previous video
-    #time.sleep(0.5)  # Small delay to prevent rapid updates
-    # WORD_LIST[current_word_index] # Aroosh          
-
-    # Aroosh
-
-    print(st.session_state["alphabet"])
-
-    st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
-    index += 1
-    time.sleep(1)
-
-    video_placeholder.markdown(
-        update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-        unsafe_allow_html=True,
-    )
+next_button = right_arrow_placeholder.st.button("NEXT", key="right_arrow_placeholder")
 left_arrow_placeholder = st.empty()
+back_button = left_arrow_placeholder.button("BACK", key="left_arrow_placeholder")
     
 
 shuffle_placeholder = st.empty()
@@ -127,7 +112,7 @@ while True and st.session_state.pages == "easypage":
     if (st.session_state["alphabet"] == 0):
         left_arrow_placeholder.empty() # Hide the button
     else:
-        if left_arrow_placeholder.button("BACK", key="left_arrow_placeholder"):
+        if back_button: # Show the button
             video_placeholder.empty()
             # WORD_LIST[current_word_index] # Aroosh          
 
@@ -144,6 +129,26 @@ while True and st.session_state.pages == "easypage":
                 update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
                 unsafe_allow_html=True,
             ) 
+    if (st.session_state["alphabet"] == 25):
+        right_arrow_placeholder.empty() # Hide the button
+    else:
+        if next_button:
+            video_placeholder.empty()  # Clear the previous video
+            #time.sleep(0.5)  # Small delay to prevent rapid updates
+            # WORD_LIST[current_word_index] # Aroosh          
+
+            # Aroosh
+
+            print(st.session_state["alphabet"])
+
+            st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
+            index += 1
+            time.sleep(1)
+
+            video_placeholder.markdown(
+                update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+                unsafe_allow_html=True,
+            )
 
     
 
