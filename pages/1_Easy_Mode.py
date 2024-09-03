@@ -92,7 +92,7 @@ index = 0
 right_arrow_placeholder = st.empty()
 if st.button("NEXT", key="right_arrow_placeholder"):
     video_placeholder.empty()  # Clear the previous video
-    time.sleep(0.5)  # Small delay to prevent rapid updates
+    #time.sleep(0.5)  # Small delay to prevent rapid updates
     # WORD_LIST[current_word_index] # Aroosh          
 
     # Aroosh
@@ -141,7 +141,10 @@ while True and st.session_state.pages == "easypage":
     time.sleep(.1)
     charachter = ALPHABET_LIST[st.session_state["alphabet"]]
     if (st.session_state["alphabet"] == 0):
-        left_arrow_placeholder = st.empty()
+        left_arrow_placeholder.empty() # Hide the button
+    else:
+        left_arrow_placeholder.button("BACK", key="left_arrow_placeholder")  # Show the button
+
     
 
     #progress_bar_placeholder.markdown(
