@@ -27,6 +27,18 @@ def set_font_style():
     </style>
     """
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #89CDD3;  /* Light blue background */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True)
+    
+st.markdown(set_font_style(), unsafe_allow_html=True)
+
     
 st.markdown(page_setup(), unsafe_allow_html=True)
 st.markdown(page_with_webcam_video(), unsafe_allow_html=True)
