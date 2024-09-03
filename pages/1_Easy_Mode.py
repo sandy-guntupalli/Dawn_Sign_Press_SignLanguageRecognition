@@ -108,23 +108,7 @@ if st.button("NEXT", key="right_arrow_placeholder"):
         unsafe_allow_html=True,
     )
 left_arrow_placeholder = st.empty()
-if left_arrow_placeholder:
-    video_placeholder.empty()
-    # WORD_LIST[current_word_index] # Aroosh          
-
-    # Aroosh
-
-    print(st.session_state["alphabet"])
-
-    st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
-    index -= 1
-
-    time.sleep(1)
-
-    video_placeholder.markdown(
-        update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-        unsafe_allow_html=True,
-    )
+    
 
 shuffle_placeholder = st.empty()
 #if st.button("SHUFFLE", key="shuffle"):
@@ -143,7 +127,23 @@ while True and st.session_state.pages == "easypage":
     if (st.session_state["alphabet"] == 0):
         left_arrow_placeholder.empty() # Hide the button
     else:
-        left_arrow_placeholder.button("BACK", key="left_arrow_placeholder")  # Show the button
+        if left_arrow_placeholder.button("BACK", key="left_arrow_placeholder"):
+            video_placeholder.empty()
+            # WORD_LIST[current_word_index] # Aroosh          
+
+            # Aroosh
+
+            print(st.session_state["alphabet"])
+
+            st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
+            index -= 1
+
+            time.sleep(1)
+
+            video_placeholder.markdown(
+                update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+                unsafe_allow_html=True,
+            ) 
 
     
 
