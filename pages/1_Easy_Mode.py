@@ -108,7 +108,7 @@ if st.button("NEXT", key="right_arrow_placeholder"):
         unsafe_allow_html=True,
     )
 left_arrow_placeholder = st.empty()
-if st.button("BACK", key="left_arrow_placeholder"):
+if left_arrow_placeholder:
     video_placeholder.empty()
     # WORD_LIST[current_word_index] # Aroosh          
 
