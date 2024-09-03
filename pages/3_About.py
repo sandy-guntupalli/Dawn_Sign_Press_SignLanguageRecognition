@@ -18,12 +18,12 @@ def set_font_style():
 
 def main():
     st.markdown("""
-        <style>
-        body {
-            background-color: #00ff00;
-        }
-        </style>
-        """, unsafe_allow_html=True)
+    <style>
+    body {
+        background-color: #89CDD3;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     st.markdown(set_font_style(), unsafe_allow_html=True)
     
     st.markdown(page_setup(), unsafe_allow_html=True)
