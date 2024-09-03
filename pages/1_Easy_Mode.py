@@ -105,6 +105,9 @@ matched_placeholder = st.empty()
 # creating the progress bar
 prob = 0
 progress_bar_placeholder = st.empty()
+next_button_clicked = False
+back_button_clicked = False
+
 
 while True and st.session_state.pages == "easypage":
     time.sleep(.1)
@@ -113,42 +116,47 @@ while True and st.session_state.pages == "easypage":
         left_arrow_placeholder.empty() # Hide the button
     else:
         if back_button: # Show the button
-            video_placeholder.empty()
-            # WORD_LIST[current_word_index] # Aroosh          
-
-            # Aroosh
-
-            print(st.session_state["alphabet"])
-
-            st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
-            index -= 1
-
-            time.sleep(1)
-
-            video_placeholder.markdown(
-                update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-                unsafe_allow_html=True,
-            ) 
+            back_button_clicked = True
     if (st.session_state["alphabet"] == 25):
         right_arrow_placeholder.empty() # Hide the button
     else:
         if next_button:
-            video_placeholder.empty()  # Clear the previous video
-            #time.sleep(0.5)  # Small delay to prevent rapid updates
-            # WORD_LIST[current_word_index] # Aroosh          
+            next_button_clicked = True
+            
+    if back_button_clicked:
+        video_placeholder.empty()
+        # WORD_LIST[current_word_index] # Aroosh          
 
-            # Aroosh
+        # Aroosh
 
-            print(st.session_state["alphabet"])
+        print(st.session_state["alphabet"])
 
-            st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
-            index += 1
-            time.sleep(1)
+        st.session_state["alphabet"] = ( st.session_state["alphabet"] - 1 ) % NUM_ALPHABETS
+        index -= 1
 
-            video_placeholder.markdown(
-                update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
-                unsafe_allow_html=True,
-            )
+        time.sleep(1)
+
+        video_placeholder.markdown(
+            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+            unsafe_allow_html=True,
+        ) 
+    if next_button_clicked:
+        video_placeholder.empty()  # Clear the previous video
+        #time.sleep(0.5)  # Small delay to prevent rapid updates
+        # WORD_LIST[current_word_index] # Aroosh          
+
+        # Aroosh
+
+        print(st.session_state["alphabet"])
+
+        st.session_state["alphabet"] = ( st.session_state["alphabet"] + 1 ) % NUM_ALPHABETS
+        index += 1
+        time.sleep(1)
+
+        video_placeholder.markdown(
+            update_video(ALPHABET_LIST[st.session_state["alphabet"]]),
+            unsafe_allow_html=True,
+        )
 
     
 
