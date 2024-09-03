@@ -90,7 +90,7 @@ with col2:
     
 index = 0
 right_arrow_placeholder = st.empty()
-next_button = right_arrow_placeholder.st.button("NEXT", key="right_arrow_placeholder")
+next_button = right_arrow_placeholder.button("NEXT", key="right_arrow_placeholder")
 left_arrow_placeholder = st.empty()
 back_button = left_arrow_placeholder.button("BACK", key="left_arrow_placeholder")
     
